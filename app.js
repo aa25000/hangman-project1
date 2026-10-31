@@ -3,6 +3,7 @@ const letters = document.querySelector('#letters')
 const wrongGuessesDisplay = document.querySelector('#wrong-guesses')
 const message = document.querySelector('#message')
 const restartButton = document.querySelector('#restart')
+const hangmanImage = document.querySelector('#hangman-image')
 
 
 let randomWord = ""
@@ -16,6 +17,7 @@ function setupGame(){
     wrongGuesses = 0
     guessedLetters = []
     message.textContent = ""
+    hangmanImage.src = "images/hangman0.png"
 
     const randomIndex = Math.floor(Math.random() * words.length)
     randomWord = words[randomIndex]
@@ -68,7 +70,7 @@ function guessLetter(letter){
     else{
         wrongGuesses++
         wrongGuessesDisplay.textContent = "Wrong Guesses: " + wrongGuesses + " / " + maxWrongGuesses
-    }
+    }hangmanImage.src = "images/hangman" + wrongGuesses + ".png"
 
     checkGame()
 }

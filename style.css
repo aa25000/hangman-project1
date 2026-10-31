@@ -100,3 +100,8 @@ p {
 #restart:hover {
     background-color: #476f99;
 }
+
+#hangman-image {
+    width: 200px;
+    height: 200px;
+}
