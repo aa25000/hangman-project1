@@ -22,3 +22,19 @@ function setupGame(){
 
     wrongGuessesDisplay.textContent = "Wrong Guesses: 0 / 6"
 }
+
+function displayWord(){
+    let displayedWord = ""
+
+    for(let i = 0; i < randomWord.length; i++){
+        if(guessedLetters.includes(randomWord[i])){
+            displayedWord += randomWord[i] + " "
+        }
+        else{
+            displayedWord += "_ "
+        }
+    }
+
+    word.textContent = displayedWord
+}
+
