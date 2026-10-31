@@ -70,6 +70,22 @@ function guessLetter(letter){
     checkGame()
 }
 
+function checkGame(){
+    let won = true
 
+    for(let i = 0; i < randomWord.length; i++){
+        if(!guessedLetters.includes(randomWord[i])){
+            won = false
+        }
+    }
 
-setupGame()
+    if(won === true){
+        message.textContent = "You Win!"
+        disableLetters()
+    }
+    else if(wrongGuesses === maxWrongGuesses){
+        message.textContent = "You Lose! The word was " + randomWord
+        disableLetters() // not created yet
+    }
+}
+
