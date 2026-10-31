@@ -38,3 +38,20 @@ function displayWord(){
     word.textContent = displayedWord
 }
 
+function createLetters(){
+    letters.innerHTML = ""
+
+    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+    for(let i = 0; i < alphabet.length; i++){
+        const button = document.createElement('button')
+        button.textContent = alphabet[i]
+
+        button.addEventListener('click', function(){
+            guessLetter(alphabet[i])
+            button.disabled = true
+        })
+
+        letters.appendChild(button)
+    }
+}
