@@ -21,6 +21,9 @@ function setupGame(){
     randomWord = words[randomIndex]
 
     wrongGuessesDisplay.textContent = "Wrong Guesses: 0 / 6"
+
+    displayWord()
+    createLetters()
 }
 
 function displayWord(){
@@ -85,7 +88,21 @@ function checkGame(){
     }
     else if(wrongGuesses === maxWrongGuesses){
         message.textContent = "You Lose! The word was " + randomWord
-        disableLetters() // not created yet
+        disableLetters() 
     }
 }
+
+function disableLetters(){
+    const buttons = letters.querySelectorAll('button')
+
+    for(let i = 0; i < buttons.length; i++){
+        buttons[i].disabled = true
+    }
+}
+
+
+restartButton.addEventListener('click', setupGame)
+
+
+setupGame()
 
