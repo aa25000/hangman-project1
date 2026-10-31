@@ -55,3 +55,21 @@ function createLetters(){
         letters.appendChild(button)
     }
 }
+
+function guessLetter(letter){
+    guessedLetters.push(letter)
+
+    if(randomWord.includes(letter)){
+        displayWord()
+    }
+    else{
+        wrongGuesses++
+        wrongGuessesDisplay.textContent = "Wrong Guesses: " + wrongGuesses + " / " + maxWrongGuesses
+    }
+
+    checkGame()
+}
+
+
+
+setupGame()
